@@ -13,7 +13,7 @@ import ErrorMessage from './errorMessage';
 const CommitList = () => {
   const [commitList, error, loading, reload] = useCommitList()
 
-  // small log
+  // TODO: remove: small log
   console.log('data loaded')
 
   return (

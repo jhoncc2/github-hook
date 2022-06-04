@@ -2,11 +2,41 @@
 
 Test project that handles github webhooks.
 
-### ports 
+## Installation
 
-  - backend: 3000
-  - frontend: 4000
+To run this project you need to download/clone the project. The project contains two folders: 
+  - gitcommit-backend: backend developed in NestJS.
+  - gitcommit-frontend: frontend develoepd in ReactJS.
 
+Then install the dependencies by running the command on the corresponding folders.
+
+```
+# on `gitcommit-backend` folder
+npm install
+# and `gitcommit-frontend` folder
+npm install
+```
+
+Lastly, run the following commands to get the services up
+
+```
+# on `gitcommit-backend` folder
+npm run start
+
+# and `gitcommit-frontend` folder
+npm start
+```
+
+As a result the following are the url address in which the backend and frontend run:
+  - backend: http://localhost:4000/
+  - frontend: http://localhost:3000/
+
+The backend contains 2 endpoints: 
+  - `http://localhost:4000/commits/mock`. Returns a mocked list of commits. 
+  - `http://localhost:4000/commits`. Returns the list of commits fetched from GITHUB REST service. This is thought to work for GITHUB 60 requests per hour restriction.
+
+Finally, to change the endpoints in the frontend the file `dataProvider.js` must be modified in the line `18`.
+ 
 # Dev Notes
 
 This section aims to capture the knowledge gathered from reading documentation. It collects the general knowledge and summarize the main points considered to develop the application. This section also provides what elements are excluded in the project implementation.
@@ -16,6 +46,10 @@ This section aims to capture the knowledge gathered from reading documentation. 
 Here the list of considerations that I made along the project implementation: 
   - All methods andclasses (implemented) must have a comment summing up what it does. Other comments are optional.
   - Commit comments do not follow any standards. For instance, I do not add prefix on the comment (e.g. `[fix]` or `[new feature]`). It does not sums up critical information. The commit comment only shows a short text with what I consider relevant information.
+  - Test. I do not implement tests in this case. All of this is susceptible to discussion, and solved in team meetings in which the result is a standard of what should be tested. Or to a what degree we let the errors be handled by the framework.   
+    - Frontend. The frontend application only shows data. The only test that can be run are snapshots tests, which personaly I think they just generate noise and they are not a source of correctness.
+    - Backend. In a similar way the only testable class is Commits.service.ts, in which the call to GITHUB API endpoint is needed. Nevertheless, in this particular implementation, the error is already handled by NestJS. Then, no custom implementation needed to be tested.
+  - Use the `TODO:` prefix as a tag for missing implementations or further improvements along the code.
 
 ## Github configuration
 

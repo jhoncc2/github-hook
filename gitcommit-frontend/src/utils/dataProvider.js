@@ -15,11 +15,12 @@ export const useCommitList = () => {
 
   useEffect(() => {
     // TODO: change mock path when ready
+    // fetch(baseUrl + '/commits/mock')
     fetch(baseUrl + '/commits')
       .then(response => 
         response.json()
       ).then(data => 
-        // TODO: we do not collect error message
+        // TODO: implement: we do not collect error message
         setResponse({data: data, error: false, loading: false})
       ).catch(error => setResponse({data: {}, error: true, loading: false}))
   }, [needsRefresh])
