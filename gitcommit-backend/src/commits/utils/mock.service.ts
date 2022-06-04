@@ -2,10 +2,15 @@ import { Injectable } from '@nestjs/common';
 import { Observable, of } from 'rxjs';
 
 /**
- * This class contains methods that access REST API endpoints
+ * This class is for mock data
  */
 @Injectable()
 export class MockCommitsService {
+  /**
+   * Returns static/mock data of commits wrapped in an Observable.
+   *
+   * @returns Observable<any[]> Array of commits
+   */
   getMockCommits(): Observable<any[]> {
     return of([
       {

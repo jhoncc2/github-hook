@@ -11,6 +11,12 @@ Test project that handles github webhooks.
 
 This section aims to capture the knowledge gathered from reading documentation. It collects the general knowledge and summarize the main points considered to develop the application. This section also provides what elements are excluded in the project implementation.
 
+## Implementation standarts
+
+Here the list of considerations that I made along the project implementation: 
+  - All methods andclasses (implemented) must have a comment summing up what it does. Other comments are optional.
+  - Commit comments do not follow any standards. For instance, I do not add prefix on the comment (e.g. `[fix]` or `[new feature]`). It does not sums up critical information. The commit comment only shows a short text with what I consider relevant information.
+
 ## Github configuration
 
 Oficial documentation (link)[https://docs.github.com/en/developers]

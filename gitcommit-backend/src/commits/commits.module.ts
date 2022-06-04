@@ -14,6 +14,7 @@ import { MockCommitsService } from './utils/mock.service';
   controllers: [CommitsController],
   providers: [CommitsService, MockCommitsService],
 })
+
 /**
  * This module contains the controller and service
  * that access github REST API.
