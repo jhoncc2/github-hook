@@ -1,7 +1,7 @@
 import './utils.css'
 
 /**
- * Loader
+ * Error message
  */
 const ErrorMessage = ({message}) => {
   return (
