@@ -11,23 +11,24 @@ To run this project you need to download/clone the project. The project contains
 Then install the dependencies by running the command on the corresponding folders.
 
 ```
-# on `gitcommit-backend` folder
+# inside `gitcommit-backend` folder run
 npm install
-# and `gitcommit-frontend` folder
+# inside `gitcommit-frontend` folder run
 npm install
 ```
 
 Lastly, run the following commands to get the services up
 
 ```
-# on `gitcommit-backend` folder
+# inside `gitcommit-backend` folder run
 npm run start
 
-# and `gitcommit-frontend` folder
+# inside `gitcommit-frontend` folder run
 npm start
 ```
 
 As a result the following are the url address in which the backend and frontend run:
+
   - backend: http://localhost:4000/
   - frontend: http://localhost:3000/
 
@@ -35,7 +36,7 @@ The backend contains 2 endpoints:
   - `http://localhost:4000/commits/mock`. Returns a mocked list of commits. 
   - `http://localhost:4000/commits`. Returns the list of commits fetched from GITHUB REST service. This is thought to work for GITHUB 60 requests per hour restriction.
 
-Finally, to change the endpoints in the frontend the file `dataProvider.js` must be modified in the line `18`.
+Finally, to change the endpoints in the frontend the file `dataProvider.js` must be modified in the line `18`. By default, the mock endpoint is NOT utilized.
  
 # Dev Notes
 
