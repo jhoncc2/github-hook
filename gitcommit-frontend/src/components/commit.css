@@ -1,5 +1,44 @@
 .Commit {
   position: relative;
   display: flex;
-  flex-direction: row;
-} 
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: white;
+  border-radius: 0.3em;
+  padding: 1em;
+  margin: 0 0 1em 0;
+  font-size: calc(2px + 2vmin);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.message {
+  display: flex;
+  align-self: start;
+  justify-content: start;
+  word-break: break-word;
+  box-sizing: content-box; 
+  width: 100%;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  margin: 0.3em 0 0 0;
+  font-size: calc(0.5px + 2vmin);
+  color: rgb(33 144 175);
+  justify-content: space-between;
+}
+.date {
+  flex: 1;
+  justify-content: start;
+  display: flex;
+}
+
+.email {
+  flex: 1;
+  width: fit-content;
+  justify-content: end;
+  display: flex;
+}
