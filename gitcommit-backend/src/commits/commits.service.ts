@@ -9,8 +9,8 @@ import { Commit } from './interface/commit.interface';
  */
 @Injectable()
 export class CommitsService {
-
-  static commitsUrl = 'https://api.github.com/repos/jhoncc2/github-hook/commits'
+  static commitsUrl =
+    'https://api.github.com/repos/jhoncc2/github-hook/commits';
 
   constructor(private httpService: HttpService) {}
 
@@ -20,9 +20,7 @@ export class CommitsService {
    * @returns Observable<Commit[]> Array of commits
    */
   getCommits(): Observable<AxiosResponse<Commit[]>> {
-    const res = this.httpService.get(
-      CommitsService.commitsUrl
-    );
+    const res = this.httpService.get(CommitsService.commitsUrl);
 
     // TODO: remove: log data
     res.subscribe((a) => {

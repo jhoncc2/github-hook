@@ -6,7 +6,8 @@ import { MockCommitsService } from './utils/mock.service';
 
 @Module({
   imports: [
-    HttpModule.register({ // basic configuration
+    HttpModule.register({
+      // basic configuration
       timeout: 5000,
       maxRedirects: 5,
     }),
