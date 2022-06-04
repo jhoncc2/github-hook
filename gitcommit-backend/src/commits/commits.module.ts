@@ -2,6 +2,7 @@ import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 import { CommitsController } from './commits.controller';
 import { CommitsService } from './commits.service';
+import { MockCommitsService } from './utils/mock.service';
 
 @Module({
   imports: [
@@ -11,7 +12,7 @@ import { CommitsService } from './commits.service';
     }),
   ],
   controllers: [CommitsController],
-  providers: [CommitsService],
+  providers: [CommitsService, MockCommitsService],
 })
 /**
  * This module contains the controller and service
