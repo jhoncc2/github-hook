@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Observable, of } from 'rxjs';
+import { Commit } from '../interface/commit.interface';
 
 /**
  * This class is for mock data
@@ -9,9 +10,9 @@ export class MockCommitsService {
   /**
    * Returns static/mock data of commits wrapped in an Observable.
    *
-   * @returns Observable<any[]> Array of commits
+   * @returns Observable<Commit[]> Array of commits
    */
-  getMockCommits(): Observable<any[]> {
+  getMockCommits(): Observable<Commit[]> {
     return of([
       {
         sha: 'b48af66039eb5b536d34c1b1e131866b0d44cc97',

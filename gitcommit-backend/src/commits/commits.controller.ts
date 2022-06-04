@@ -3,6 +3,7 @@ import { CommitsService } from './commits.service';
 import { Observable, of } from 'rxjs';
 import { MockData } from './utils/mock';
 import { MockCommitsService } from './utils/mock.service';
+import { Commit } from './interface/commit.interface';
 
 /**
  * Class with endpoints for `/commits` path
@@ -16,10 +17,10 @@ export class CommitsController {
    * Returns Observable containing the `promise` that returns 
    * the data collected from github
    * 
-   * @returns Observable<any[]>
+   * @returns Observable<Commit[]>
    */
   @Get()
-  commits(): Observable<any[]> {
+  commits(): Observable<Commit[]> {
     return this.mockService.getMockCommits()
   }
 }
