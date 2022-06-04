@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import CommitList from './components/commitList';
+import {mockCommitList} from './utils/mock';
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <div className="App-body">
+        <CommitList commitList= {mockCommitList}/>
+      </div>
     </div>
   );
 }

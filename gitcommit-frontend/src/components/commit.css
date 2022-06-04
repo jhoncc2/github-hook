@@ -1,0 +1,5 @@
+.Commit {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+} 
