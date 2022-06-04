@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { useCommitList } from '../utils/dataProvider'
 import Commit from './commit'
+import Loader from './loader'
 import './commitList.css'
+import './utils.css'
+import ErrorMessage from './errorMessage';
 
 /**
  * CommitList component
@@ -9,19 +12,25 @@ import './commitList.css'
  */
 const CommitList = () => {
   const [needsRefresh, setNeedsRefresh] = useState(false)
-  const commitList = useCommitList(needsRefresh)
-  
-  console.log('a.', commitList)
+  const [commitList, error, loading] = useCommitList(needsRefresh)
+
+  console.log('data:', commitList)
+
   return (
     <div className='CommitList'>
-      {commitList.map((commit) => {
-        // pass all the data needed
-        return (
-          <div key={commit.sha}>
-            <Commit {...commit} />
-          </div>
-        )
-      })}
+      {loading
+        ?  <Loader/>
+        : error
+          // TODO: manage messages on a separate file
+          ? <ErrorMessage message={"Something unexpected ocurred!"}/>
+          : commitList.map((commit) => {
+            return (
+              <div key={commit.sha}>
+                <Commit {...commit} />
+              </div>
+            )
+          })
+      }
     </div>
   )
 }

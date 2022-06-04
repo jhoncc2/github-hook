@@ -2,7 +2,6 @@ import './commit.css'
 
 /**
  * Commit componet
- * @param {object} commit
  */
 const Commit = ({commit}) => {
   return (
