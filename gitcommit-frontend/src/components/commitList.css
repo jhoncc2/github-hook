@@ -1,6 +1,44 @@
-.CommitList {
+.wrapperList {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 70%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+}
+
+.refreshButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3em;
+  border: 0.02;
+  border-color: black;
+  background-color: white;
+  color: black;
+  padding: 0.5em
+}
+
+.refreshButton img{
+  width: 2em;
+  height: 2em;
+  margin: 0 0.3em;
+}
+
+.commitList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1em;
 } 

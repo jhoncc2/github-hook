@@ -9,9 +9,10 @@ const baseResponse = { data: [], error: false, loading: false }
  * Custom hook to collect commit list from backend
  * @returns object[] - list of commits
  */
-export const useCommitList = (needsRefresh) => {
+export const useCommitList = () => {
   const [ response, setResponse ] = useState(baseResponse)
-  
+  const [needsRefresh, setNeedsRefresh] = useState({})
+
   useEffect(() => {
     // TODO: change mock path when ready
     fetch(baseUrl + '/commits/mock')
@@ -23,5 +24,5 @@ export const useCommitList = (needsRefresh) => {
       ).catch(error => setResponse({data: {}, error: true, loading: false}))
   }, [needsRefresh])
 
-  return [response.data, response.error, response.loading]
+  return [response.data, response.error, response.loading, setNeedsRefresh]
 }
