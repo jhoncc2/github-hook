@@ -15,7 +15,7 @@ export const useCommitList = () => {
 
   useEffect(() => {
     // TODO: change mock path when ready
-    fetch(baseUrl + '/commits/mock')
+    fetch(baseUrl + '/commits')
       .then(response => 
         response.json()
       ).then(data => 
