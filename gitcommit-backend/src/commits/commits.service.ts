@@ -23,9 +23,9 @@ export class CommitsService {
     const res = this.httpService.get(CommitsService.commitsUrl);
 
     // TODO: remove: log data
-    res.subscribe((a) => {
-      console.log(a.data[0]);
-    });
+    // res.subscribe((a) => {
+    //   console.log(a.data[0]);
+    // });
 
     return res;
   }

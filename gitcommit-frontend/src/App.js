@@ -4,6 +4,7 @@ import CommitList from './components/commitList';
 import {mockCommitList} from './utils/mock';
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
